@@ -60,6 +60,7 @@ fastify.post('/score', (request, reply) =>{
           adamScore: score.adamScore,
           kieranScore: score.kieranScore
         };
+        console.log(response);
         reply.send(response);
 })
 
