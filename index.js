@@ -13,35 +13,30 @@ if (fs.existsSync(gameHistoryFilePath)) {
   gameHistory = JSON.parse(gameHistoryData);
 }
 
-fastify.post('/:endpoint', (request, reply) => {
-  const { endpoint } = request.params;
-  console.log(endpoint);
-  switch(endpoint){
-    case "kieran" && "adam":{
-    console.log("/adam or /kieran was requested");
+fastify.post('/win', (request, reply) => {
+
+  console.log(request.body.winner);
+  console.log("Changing the Score!!!!");
     // Generate a unique serial number
-        const serialNumber = generateSerialNumber();
+  const serialNumber = generateSerialNumber();
 
         // Create a new game entry with the current date, time, selected game, and serial number
-        const gameEntry = {
-            date: request.body.date,
-            time: request.body.time,
-            selectedGame: request.body.selectedGame,
-            serialNumber: serialNumber,
-            winner: request.body.endpoint,
-        };
+  const gameEntry = {
+    date: request.body.date,
+    time: request.body.time,
+    selectedGame: request.body.selectedGame,
+    serialNumber: serialNumber,
+    winner: request.body.winner,
+  };
 
         // Add the game entry to the game history
-        gameHistory.push(gameEntry);
+  gameHistory.push(gameEntry);
 
         // Save the updated game history to the JSON file
-        saveGameHistoryToFile();
+  saveGameHistoryToFile();
 
-        // Send a response with a success message and the assigned serial number
-        reply.send({ message: `Received ${endpoint} data`, serialNumber: serialNumber });
-        break;
-    }
-  }
+    // Send a response with a success message and the assigned serial number
+  reply.send({ message: `Received ${endpoint} data`, serialNumber: serialNumber });
 
   
 });
