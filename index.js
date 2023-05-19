@@ -18,7 +18,8 @@ fastify.post('/:endpoint', (request, reply) => {
   console.log(endpoint);
   switch(endpoint){
     case "kieran" && "adam":{
-        // Generate a unique serial number
+    console.log("/adam or /kieran was requested");
+    // Generate a unique serial number
         const serialNumber = generateSerialNumber();
 
         // Create a new game entry with the current date, time, selected game, and serial number
@@ -46,6 +47,7 @@ fastify.post('/:endpoint', (request, reply) => {
 });
 
 fastify.post('/score', (request, reply) =>{
+    console.log("/score was requested");
         let adamWins = 0;
         let kieranWins = 0;
 
