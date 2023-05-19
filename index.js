@@ -59,8 +59,8 @@ fastify.post('/score', (request, reply) =>{
             }
         });
         const response = {
-          adamScore: score.adamScore,
-          kieranScore: score.kieranScore
+          adamScore: adamWins,
+          kieranScore: kieranWins
         };
         console.log(response);
         reply.send(response);
