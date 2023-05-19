@@ -40,7 +40,12 @@ fastify.post('/:endpoint', (request, reply) => {
         reply.send({ message: `Received ${endpoint} data`, serialNumber: serialNumber });
         break;
     }
-    case "score":{
+  }
+
+  
+});
+
+fastify.post('/score', (request, reply) =>{
         let adamWins = 0;
         let kieranWins = 0;
 
@@ -56,12 +61,7 @@ fastify.post('/:endpoint', (request, reply) => {
           kieranScore: score.kieranScore
         };
         reply.send(response);
-        break;
-    }
-  }
-
-  
-});
+})
 
 fastify.get('/', (request, reply) => {
   // Create the HTML content for the game history
