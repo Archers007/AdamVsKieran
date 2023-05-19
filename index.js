@@ -36,7 +36,7 @@ fastify.post('/win', (request, reply) => {
   saveGameHistoryToFile();
 
     // Send a response with a success message and the assigned serial number
-  reply.send({ message: `Received ${endpoint} data`, serialNumber: serialNumber });
+  reply.send({ message: `Received winners data`, serialNumber: serialNumber });
 
   
 });
