@@ -1,0 +1,22 @@
+{
+    "name": "virtual_signpass",
+    "version": "1.4.21",
+    "description": "",
+    "author": "User1",
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon ./index.js"
+    },
+    "nodemonConfig": {
+        "ignore": [
+            "**/test/**"
+        ],
+        "delay": 1000
+    },
+    "dependencies": {
+        "fastify": "^4.17.0",
+        "nodemon": "^2.0.21"
+    }
+}
