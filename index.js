@@ -100,8 +100,8 @@ fastify.post('/removeGame', (req, res) => {
 function generateGameHistoryHTML() {
     let html = `
     <html>
+    <title>Adam VS Kieran</title>
        <style>
-
           body {
           background-color: black;
           color: white;
