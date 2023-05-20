@@ -24,7 +24,7 @@ fastify.post('/win', (request, reply) => {
   const gameEntry = {
     date: request.body.date,
     time: request.body.time,
-    selectedGame: request.body.selectedGame,
+    selectedGame: request.body.game,
     serialNumber: serialNumber,
     winner: request.body.winner,
   };
