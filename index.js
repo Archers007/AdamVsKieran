@@ -80,12 +80,26 @@ function saveGameHistoryToFile() {
   });
 }
 
+fastify.post('/removeGame', (req, res) => {
+    const serialNumber = req.body.serialNumber;
+  
+    // Find the index of the game with the matching serial number
+    const gameIndex = gameHistory.findIndex((game) => game.serialNumber === serialNumber);
+  
+    if (gameIndex !== -1) {
+      // Remove the game from the array
+      gameHistory.splice(gameIndex, 1);
+      res.status(200).json({ message: `Game with serial number ${serialNumber} has been removed.` });
+    } else {
+      res.status(404).json({ error: `Game with serial number ${serialNumber} not found.` });
+    }
+  });
+  
+
 // Helper function to generate the HTML content for the game history
 function generateGameHistoryHTML() {
     let html = `
     <html>
-    <head>
-       <title>Game History</title>
        <style>
 
           body {
