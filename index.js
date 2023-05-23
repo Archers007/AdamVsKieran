@@ -1,6 +1,6 @@
 const fs = require('fs');
 const fastify = require('fastify')();
-const port = "3000"
+const port = "9000"
 
 
 const gameHistoryFilePath = 'gameHistory.json';
